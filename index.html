@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0715">
+  <meta name="description" content="A birthday celebration, a love letter, and a prayer created especially for Shalom.">
+  <title>Happy Birthday, My Joy | For Shalom</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0715;
+      --panel: #151020;
+      --panel-light: #20152f;
+      --purple: #a16aef;
+      --lavender: #d4baff;
+      --pink: #f5a6d8;
+      --white: #fff8ff;
+      --muted: #d0c2df;
+      --line: rgba(205, 169, 255, .25);
+      --blue: #67b5ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--white);
+      background:
+        radial-gradient(ellipse at 15% 10%, #422064 0, transparent 32%),
+        radial-gradient(ellipse at 90% 35%, #301348 0, transparent 30%),
+        var(--bg);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .25;
+      background-image:
+        radial-gradient(1px 1px at 12% 18%, #fff, transparent),
+        radial-gradient(2px 2px at 78% 23%, #d9a9ff, transparent),
+        radial-gradient(1px 1px at 42% 73%, #fff, transparent),
+        radial-gradient(2px 2px at 89% 84%, #f2a9ed, transparent);
+      background-size: 190px 190px, 270px 270px,
+                       220px 220px, 310px 310px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--lavender);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .script {
+      font-family: "Allura", cursive;
+      color: var(--pink);
+      font-weight: 400;
+    }
+
+    .eyebrow {
+      color: var(--lavender);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .73rem;
+      font-weight: 700;
+    }
+
+    .section {
+      padding-block: 88px;
+    }
+
+    .section-heading {
+      font: 500 clamp(2.1rem, 5vw, 3.5rem)/1.15
+        "Playfair Display", serif;
+      letter-spacing: -.035em;
+      margin: 12px 0 16px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin: 0 auto 38px;
+      max-width: 760px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 7, 21, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--pink);
+      font: 2rem "Allura", cursive;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .84rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      color: white;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 660px;
+      display: grid;
+      grid-template-columns: 1fr .92fr;
+      gap: 45px;
+      align-items: center;
+      padding-block: 62px 78px;
+    }
+
+    .hero h1 {
+      font: 500 clamp(3rem, 6vw, 5.5rem)/1.08
+        "Playfair Display", serif;
+      letter-spacing: -.045em;
+      margin: 18px 0;
+    }
+
+    .hero h1 .script {
+      display: inline-block;
+      font-size: 1.12em;
+    }
+
+    .nicknames {
+      font: 1.25rem "Playfair Display", serif;
+      margin: 15px 0;
+    }
+
+    .hero-copy > p {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 11px 20px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #180b24;
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      border: none;
+      font-weight: 700;
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .hero-visual {
+      position: relative;
+      max-width: 470px;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .hero-frame {
+      position: relative;
+      padding: 12px;
+      border: 1px solid rgba(212, 186, 255, .45);
+      border-radius: 230px 230px 28px 28px;
+      background: linear-gradient(145deg, rgba(161, 106, 239, .2), rgba(245, 166, 216, .08));
+      box-shadow: 0 25px 90px rgba(0, 0, 0, .35);
+      overflow: hidden;
+    }
+
+    .hero-frame img {
+      display: block;
+      width: 100%;
+      height: 530px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 220px 220px 20px 20px;
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      right: 28px;
+      padding: 15px 18px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 16px;
+      background: rgba(11, 7, 21, .78);
+      backdrop-filter: blur(12px);
+    }
+
+    .photo-label strong {
+      display: block;
+      font: 1.4rem "Playfair Display", serif;
+    }
+
+    .photo-label span {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: var(--pink);
+      font-size: 2.4rem;
+      filter: drop-shadow(0 0 18px rgba(245, 166, 216, .6));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .heart-one {
+      top: 12%;
+      right: -18px;
+    }
+
+    .heart-two {
+      bottom: 18%;
+      left: -25px;
+      font-size: 1.7rem;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-6deg);
+      }
+      50% {
+        transform: translateY(-13px) rotate(8deg);
+      }
+    }
+
+    .countdown-section {
+      padding-block: 25px 60px;
+    }
+
+    .countdown-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(161, 106, 239, .12), rgba(245, 166, 216, .06));
+    }
+
+    .countdown-card h2 {
+      font: 500 clamp(1.6rem, 4vw, 2.5rem)/1.2
+        "Playfair Display", serif;
+      margin: 0 0 8px;
+    }
+
+    .countdown-card > p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+      margin: 24px auto 12px;
+    }
+
+    .time-box {
+      padding: 17px 10px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(11, 7, 21, .6);
+    }
+
+    .time-box strong {
+      display: block;
+      font: 600 clamp(1.6rem, 4vw, 2.5rem)/1.1
+        "Playfair Display", serif;
+      color: var(--pink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time-box span {
+      color: var(--muted);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .countdown-note {
+      color: var(--lavender);
+      font-size: .9rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-card {
+      position: relative;
+      min-height: 300px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .gallery-card img {
+      display: block;
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 40px 18px 18px;
+      background: linear-gradient(transparent, rgba(8, 4, 14, .95));
+    }
+
+    .gallery-caption h3 {
+      margin: 0;
+      font: 1.4rem "Playfair Display", serif;
+    }
+
+    .gallery-caption p {
+      color: var(--muted);
+      margin: 4px 0 0;
+      font-size: .9rem;
+    }
+        .letter-card,
+    .prayer-card,
+    .encouragement-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(
+        145deg,
+        rgba(32, 21, 47, .92),
+        rgba(21, 16, 32, .96)
+      );
+      padding: clamp(22px, 5vw, 42px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .16);
+    }
+
+    .letter {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .letter p,
+    .prayer-card p,
+    .encouragement-card p {
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .salutation {
+      font: 2rem "Allura", cursive;
+      color: var(--pink);
+      margin-bottom: 18px;
+    }
+
+    .quote {
+      border-left: 3px solid var(--pink);
+      padding: 14px 20px;
+      margin: 28px 0;
+      color: var(--lavender);
+      font: italic 1.35rem/1.6 "Playfair Display", serif;
+      background: rgba(161, 106, 239, .07);
+      border-radius: 0 14px 14px 0;
+    }
+
+    .signoff {
+      margin-top: 30px;
+      color: var(--lavender);
+      font: 1.7rem "Allura", cursive;
+    }
+
+    .prayer-card {
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prayer-card::before {
+      content: "♡";
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      color: rgba(245, 166, 216, .08);
+      font-size: 10rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .amen {
+      text-align: right;
+      color: var(--pink) !important;
+      font: 1.8rem "Allura", cursive;
+      margin-bottom: 0 !important;
+    }
+
+    .encouragement-card {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .encouragement-card .big-message {
+      color: var(--lavender);
+      font: 1.65rem/1.5 "Playfair Display", serif;
+      margin-bottom: 20px;
+    }
+
+    .surprise-wrap {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .surprise-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(25px, 5vw, 45px);
+      border-radius: 26px;
+      border: 1px solid rgba(245, 166, 216, .3);
+      background:
+        radial-gradient(ellipse at top, rgba(161, 106, 239, .2), transparent 60%),
+        var(--panel);
+    }
+
+    .surprise-panel .surprise-icon {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    .surprise-panel h3 {
+      font: 500 clamp(1.7rem, 4vw, 2.7rem)/1.25
+        "Playfair Display", serif;
+      margin: 8px 0 12px;
+    }
+
+    .surprise-panel > p {
+      color: var(--muted);
+      max-width: 590px;
+      margin: 0 auto 22px;
+    }
+
+    .surprise-message {
+      display: none;
+      max-width: 650px;
+      margin: 26px auto 0;
+      padding: 25px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(11, 7, 21, .65);
+      text-align: left;
+    }
+
+    .surprise-message.open {
+      display: block;
+      animation: reveal .6s ease both;
+    }
+
+    .surprise-message p {
+      color: var(--muted);
+    }
+
+    .surprise-message .final-words {
+      font: 2rem/1.4 "Allura", cursive;
+      color: var(--pink);
+      text-align: center;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sparkle {
+      position: absolute;
+      color: var(--pink);
+      font-size: 1.3rem;
+      pointer-events: none;
+      animation: sparkle-up 2.5s ease-out forwards;
+    }
+
+    @keyframes sparkle-up {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(.5) rotate(0deg);
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.2) rotate(35deg);
+      }
+    }
+
+    .footer {
+      padding: 35px 20px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      background: rgba(8, 5, 14, .65);
+    }
+
+    .footer p {
+      margin: 5px 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer .brand-footer {
+      color: var(--pink);
+      font: 1.9rem "Allura", cursive;
+    }
+
+    .footer .tech-name {
+      color: var(--lavender);
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .divider-heart {
+      color: var(--pink);
+      text-align: center;
+      margin: 30px 0 0;
+      letter-spacing: .7em;
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+        padding-top: 50px;
+      }
+
+      .hero-copy > p {
+        margin-inline: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        max-width: 410px;
+      }
+
+      .hero-frame img {
+        height: 470px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .section {
+        padding-block: 65px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav {
+        position: relative;
+        min-height: 62px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: -14px;
+        right: -14px;
+        padding: 15px 20px 20px;
+        background: rgba(11, 7, 21, .98);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 4px;
+        border-bottom: 1px solid rgba(205, 169, 255, .1);
+      }
+
+      .hero {
+        min-height: auto;
+        padding-block: 45px 55px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 13vw, 4.3rem);
+      }
+
+      .hero-frame img {
+        height: 410px;
+      }
+
+      .countdown-card {
+        padding: 22px 13px;
+      }
+
+      .countdown {
+        gap: 7px;
+      }
+
+      .time-box {
+        padding: 13px 4px;
+        border-radius: 12px;
+      }
+
+      .time-box span {
+        font-size: .62rem;
+        letter-spacing: .06em;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card,
+      .gallery-card img {
+        height: auto;
+        min-height: 0;
+      }
+
+      .gallery-card img {
+        aspect-ratio: 4 / 5;
+      }
+
+      .letter-card,
+      .prayer-card,
+      .encouragement-card {
+        padding: 22px;
+      }
+
+      .quote {
+        font-size: 1.15rem;
+      }
+
+      .surprise-panel {
+        padding: 25px 17px;
+      }
+
+      .surprise-message {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="brand">For Shalom ♡</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        ☰ Menu
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">My Letter</a>
+        <a href="#prayer">A Little Prayer</a>
+        <a href="#surprise">Surprise</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">A little corner of the internet, made for you</span>
+
+        <h1>
+          Happy Birthday,<br>
+          <span class="script">My Joy</span>
+        </h1>
+
+        <div class="nicknames">My sunshine · My favourite person · Shalom 💜</div>
+
+        <p>
+          Today is about celebrating you: your beautiful heart, your dreams,
+          your growth, and the wonderful person you are becoming. I made this
+          little space just for you, so you can feel loved, appreciated,
+          and celebrated.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#letter">Read My Letter ♡</a>
+          <a class="btn btn-secondary" href="#surprise">✧ A Little Prayer</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img
+            src="https://uploads.onecompiler.io/44pvj76hb/44z6srxuc/for%20shalom.jpeg"
+            alt="A special photograph of Shalom"
+          >
+          <div class="photo-label">
+            <strong>My Joy, Shalom</strong>
+            <span>A little reminder that you are loved. ♡</span>
+          </div>
+        </div>
+        <span class="floating-heart heart-one" aria-hidden="true">♡</span>
+        <span class="floating-heart heart-two" aria-hidden="true">✧</span>
+      </div>
+    </section>
+
+    <section class="countdown-section container" id="countdown">
+      <div class="countdown-card">
+        <h2>Counting Down to Your Special Day ✨</h2>
+        <p>November 4 — the day someone wonderful came into the world.</p>
+
+        <div class="countdown" aria-label="Birthday countdown">
+          <div class="time-box">
+            <strong id="days">00</strong>
+            <span>Days</span>
+          </div>
+          <div class="time-box">
+            <strong id="hours">00</strong>
+            <span>Hours</span>
+          </div>
+          <div class="time-box">
+            <strong id="minutes">00</strong>
+            <span>Minutes</span>
+          </div>
+          <div class="time-box">
+            <strong id="seconds">00</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+
+        <div class="countdown-note" id="countdownNote">
+          Every second brings us closer to celebrating you. 💜
+        </div>
+      </div>
+    </section>
+        <!-- MEMORIES GALLERY -->
+    <section class="section container" id="memories">
+      <div class="section-header">
+        <span class="eyebrow">Little moments, lasting memories</span>
+        <h2 class="section-heading">A Gallery of You ♡</h2>
+        <p class="section-intro">
+          A few pictures of someone who deserves to be celebrated.
+          Every photograph holds a little piece of a beautiful story.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <img
+            src="https://uploads.onecompiler.io/44pvj76hb/44z6srxuc/for%20shalom.jpeg"
+            alt="Shalom's birthday portrait"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <h3>My Beautiful Girl</h3>
+            <p>Beautiful in your own special way. 💜</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img
+            src="https://uploads.onecompiler.io/44pvj76hb/44z6srxuc/couples1.jpeg"
+            alt="A treasured memory together"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <h3>Our Little Story</h3>
+            <p>One memory at a time, one day at a time.</p>
+          </div>
+        </article>
+
+        <article class="gallery-card">
+          <img
+            src="https://uploads.onecompiler.io/44pvj76hb/44z6srxuc/sis%20shalom.jpeg"
+            alt="Another lovely photograph of Shalom"
+            loading="lazy"
+          >
+          <div class="gallery-caption">
+            <h3>Simply You</h3>
+            <p>Someone worth appreciating every day. ♡</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="divider-heart" aria-hidden="true">♡ ✧ ♡</div>
+    </section>
+
+    <!-- PERSONAL LOVE LETTER -->
+    <section class="section container" id="letter">
+      <div class="section-header">
+        <span class="eyebrow">Words from my heart to yours</span>
+        <h2 class="section-heading">A Letter for My Joy</h2>
+        <p class="section-intro">
+          Take your time reading this, my love. I wrote it especially for you.
+        </p>
+      </div>
+
+      <article class="letter-card letter">
+        <div class="salutation">My dear Shalom, my joy, my sunshine,</div>
+
+        <p>Happy birthday, my love. 💜</p>
+
+        <p>
+          I wanted to make something that would help you feel celebrated
+          today, something you could return to whenever you need a
+          reminder that your life matters and that there are beautiful
+          things still ahead of you.
+        </p>
+
+        <p>
+          Today, I celebrate more than another year of your life.
+          I celebrate the person you are: your own mind, your hopes,
+          your personality, and all the little things that make you
+          uniquely you. I hope you never feel that you must become
+          somebody else to deserve good things. You can keep growing
+          without losing the person you are today.
+        </p>
+
+        <p>
+          My joy, please don't be too hard on yourself when life feels
+          slow. You don't need to have every answer right now, and you
+          don't have to compare your journey with somebody else's.
+          People grow through different seasons, and not every kind
+          of progress is visible to the world.
+        </p>
+
+        <p>
+          Keep taking your dreams seriously. Keep learning, keep
+          preparing yourself, and keep believing that your effort
+          matters. Celebrate the little wins, too. The days you show
+          up when you feel tired, the things you learn after a mistake,
+          and the courage it takes to begin again are all worth
+          recognising.
+        </p>
+
+        <p>
+          I hope you also remember to take care of yourself along the
+          way. Rest when you need to. Give yourself grace when things
+          don't work out exactly as planned. You can be ambitious and
+          still be gentle with yourself. You can be strong and still
+          ask for help.
+        </p>
+
+        <p>
+          Thank you for being part of my life. I hope this gift reminds
+          you that you deserve appreciation not only when you achieve
+          something, but simply because you are you. I want you to
+          keep discovering your strengths, becoming more confident,
+          and making choices that reflect the future you want.
+        </p>
+
+        <div class="quote">
+          "You do not have to rush into your future to be worthy
+          of a beautiful one."
+        </div>
+
+        <p>
+          So today, smile a little longer. Enjoy your birthday.
+          Receive the love around you, and give yourself permission
+          to be happy. Your story is still unfolding, Shalom, and
+          I hope you walk into this new chapter with faith, hope,
+          courage, and a heart that knows its worth.
+        </p>
+
+        <p>
+          Happy birthday, my sunshine. May this new year of your life
+          bring you peace, good health, wisdom, meaningful friendships,
+          spiritual growth, and many beautiful reasons to thank God.
+        </p>
+
+        <div class="signoff">With love, always,</div>
+        <p style="margin-top:0">Your boyfriend, Paul. ♡</p>
+      </article>
+    </section>
+
+    <!-- A SHORT PERSONAL BIRTHDAY PRAYER -->
+    <section class="section container" id="prayer">
+      <div class="section-header">
+        <span class="eyebrow">A little wish from my heart</span>
+        <h2 class="section-heading">A Prayer for You ♡</h2>
+        <p class="section-intro">
+          Just a few words I sincerely wish for you as you begin another year.
+        </p>
+      </div>
+
+      <article class="prayer-card">
+        <div class="salutation">My Joy,</div>
+
+        <p>
+          My prayer for you is that God will guide your steps, protect you,
+          and give you wisdom for every decision ahead. May His grace be
+          upon you, may your efforts bring good fruit, and may you find
+          strength and peace even on difficult days.
+        </p>
+
+        <p>
+          You shall grow in wisdom, confidence, and purpose. May the doors
+          that are right for you open at the right time, and may this new
+          year bring you good health, genuine happiness, and beautiful
+          reasons to thank God.
+        </p>
+
+        <p>
+          Happy birthday, Shalom. I'm rooting for you, always. 💜
+        </p>
+
+        <p class="amen">Amen. ♡</p>
+      </article>
+    </section>
+
+    <!-- PERSONAL ENCOURAGEMENT -->
+    <section class="section container" id="encouragement">
+      <div class="section-header">
+        <span class="eyebrow">A reminder for your new chapter</span>
+        <h2 class="section-heading">Keep Becoming, My Love</h2>
+      </div>
+
+      <article class="encouragement-card">
+        <p class="big-message">
+          You don't have to have everything figured out to be doing well.
+        </p>
+
+        <p>
+          Keep learning. Keep dreaming. Keep giving yourself a chance.
+          There will be days when everything feels easy and days when
+          you need to take things one step at a time. Both kinds of days
+          are part of growing.
+        </p>
+
+        <p>
+          I hope this new year brings you closer to the things you want
+          for yourself. I hope you find good people, meaningful
+          opportunities, and reasons to be proud of how far you've come.
+        </p>
+
+        <p>
+          And when you need someone to remind you that you can keep going,
+          remember that I am cheering you on. Happy birthday, Shalom. ♡
+        </p>
+      </article>
+    </section>
+    
+    <!-- THE SURPRISE -->
+    <section class="section container" id="surprise">
+      <div class="section-header">
+        <span class="eyebrow">One last thing, my love</span>
+        <h2 class="section-heading">A Little Surprise for You ♡</h2>
+        <p class="section-intro">
+          There's something else I wanted to tell you...
+        </p>
+      </div>
+
+      <div class="surprise-wrap">
+        <div class="surprise-panel" id="surprisePanel">
+          <div class="surprise-icon">🎁</div>
+
+          <h3>Ready for your little surprise?</h3>
+
+          <p>
+            There's one more message waiting for you.
+            Open it when you're ready, my joy. 💜
+          </p>
+
+          <button
+            class="btn btn-primary"
+            id="surpriseButton"
+            type="button"
+            aria-expanded="false"
+            aria-controls="surpriseMessage"
+          >
+            Open Your Surprise ♡
+          </button>
+
+          <div
+            class="surprise-message"
+            id="surpriseMessage"
+            tabindex="-1"
+          >
+            <div class="salutation">My Shalom,</div>
+
+            <p>
+              There is so much I still hope to do with you,
+              so many memories I hope we'll make, and so many
+              dreams I want us to keep encouraging each other toward.
+            </p>
+
+            <p>
+              I may not have everything figured out today, and
+              I may still be building myself and my future, but
+              I want you to know that my intentions for you are
+              sincere. I want to keep growing, showing up, and
+              becoming someone who can build a beautiful future
+              with you.
+            </p>
+
+            <p>
+              And if life continues to guide us well, one of the
+              dreams I carry in my heart is to stand before you
+              one day, not just as the boyfriend who made you a
+              birthday website, but as the man asking to build
+              a home and a lifetime with you.
+            </p>
+
+            <p class="final-words">
+              Happy birthday, my joy. Here's to your dreams,
+              our memories, and the beautiful future we hope for. 💜
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="brand-footer">Made with love ♡</p>
+    <p>For Shalom, From Micheal.</p>
+    <p>
+      Crafted with care by
+      <span class="tech-name">Map_Technologies</span>
+    </p>
+    <p>Mapping innovative solutions for your digital needs.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // MOBILE NAVIGATION
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕ Close" : "☰ Menu";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰ Menu";
+      });
+    });
+
+
+    // BIRTHDAY COUNTDOWN
+    // JavaScript months start at 0:
+    // January = 0, November = 10.
+    const birthdayDate = new Date(2026, 10, 4, 0, 0, 0, 0);
+
+    let countdownTimer;
+
+    function updateCountdown() {
+      const now = new Date();
+      const remaining = birthdayDate.getTime() - now.getTime();
+
+      if (remaining <= 0) {
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.getElementById("countdownNote").textContent =
+          "Happy birthday, Shalom. Today is your day! 🥹💜";
+
+        if (countdownTimer) {
+          clearInterval(countdownTimer);
+        }
+
+        return;
+      }
+
+      const days = Math.floor(remaining / 86400000);
+      const hours = Math.floor((remaining % 86400000) / 3600000);
+      const minutes = Math.floor((remaining % 3600000) / 60000);
+      const seconds = Math.floor((remaining % 60000) / 1000);
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    // Display the countdown immediately.
+    updateCountdown();
+
+    // Update it every second.
+    countdownTimer = setInterval(updateCountdown, 1000);
+
+
+    // SURPRISE REVEAL
+    const surpriseButton = document.getElementById("surpriseButton");
+    const surpriseMessage = document.getElementById("surpriseMessage");
+    const surprisePanel = document.getElementById("surprisePanel");
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    surpriseButton.addEventListener("click", () => {
+      const isOpen = surpriseMessage.classList.toggle("open");
+
+      surpriseButton.setAttribute("aria-expanded", String(isOpen));
+
+      surpriseButton.textContent = isOpen
+        ? "Close Your Surprise ✧"
+        : "Open Your Surprise ♡";
+
+      if (isOpen) {
+        surpriseMessage.focus({ preventScroll: true });
+
+        // Add floating hearts and sparkles.
+        if (!reducedMotion.matches) {
+          for (let i = 0; i < 14; i++) {
+            const sparkle = document.createElement("span");
+
+            sparkle.className = "sparkle";
+            sparkle.setAttribute("aria-hidden", "true");
+
+            sparkle.textContent = ["♡", "✦", "✧", "♥"][i % 4];
+
+            sparkle.style.left =
+              (5 + Math.random() * 90) + "%";
+
+            sparkle.style.bottom =
+              (8 + Math.random() * 15) + "px";
+
+            sparkle.style.animationDelay =
+              (Math.random() * 0.6) + "s";
+
+            surprisePanel.appendChild(sparkle);
+
+            setTimeout(() => {
+              sparkle.remove();
+            }, 3000);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
